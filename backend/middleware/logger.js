@@ -4,7 +4,7 @@ const fs = require("fs");
 const fsPromises = require("fs").promises;
 const path = require("path");
 
-const logEvents = async (message, logFilename) => {
+const logEvents = async (message, logFileName) => {
   const dateTime = format(new Date(), "yyyyMMdd\tHH:mm:ss");
   const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
 
@@ -27,7 +27,4 @@ const logger = (req, res, next) => {
   next();
 };
 
-module.exports = {
-  logEvents,
-  logger,
-};
+module.exports = { logEvents, logger };
